@@ -10,7 +10,7 @@ class Website():
     payload = "{}"
 
     #Request all upcoming movies
-    conn.request("GET", "/3/movie/upcoming?page=1&language=en-US&api_key=140bea22b2b36ad494e089ba17305578", payload)
+    conn.request("GET", "/3/movie/upcoming?page=1&language=en-US&api_key=", payload)
 
     #Receive results from request
     res = conn.getresponse()
@@ -28,7 +28,7 @@ class Website():
 
                 #Request trailer for movie
                 trailer = ""
-                conn.request("GET", "/3/movie/" + str(ks['id']) + "/videos?language=en-US&api_key=140bea22b2b36ad494e089ba17305578", payload)
+                conn.request("GET", "/3/movie/" + str(ks['id']) + "/videos?language=en-US&api_key=", payload)
 
                 #Receive results from request
                 res = conn.getresponse()
